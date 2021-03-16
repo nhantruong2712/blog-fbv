@@ -1,0 +1,51 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block title %} Blog {% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-9">
+    {% if search %}
+    <h2>Seach Results for "{{ search }}"</h2>
+    {% endif %}
+
+    {% for post in posts %}
+      <div class="post">
+        <h3><a href="{% url 'blog:blog_post' post.created.year post.created.month post.slug %}"> {{ post.title }} </a></h3>
+        <span>{{ post.created | date }} <b>|</b> <a href="{% url 'blog:blog_category' post.category|slugify %}">  {{ post.category.title }}</a> </span>
+        <p>{{ post.preview | safe }}</p>
+      </div>
+    {% endfor %}
+    <br>
+    <center>
+      <ul class="pagination">
+        {% if posts.has_previous %}
+          <li><a href="?page={{ posts.previous_page_number }}">&laquo;</a></li>
+        {% else %}
+          <li class="disabled"><a href="">&laquo;</a></li>
+        {% endif %}
+
+        {% for i in posts.paginator.page_range %}
+          <li {% if posts.number == i %} class="active" {% endif %}>
+            <a href="?page={{ i }}{% if search %}&search={{ search }}{% endif %}">{{ i }}</a>
+          </li>
+        {% endfor %}
+
+        {% if posts.has_next %}
+          <li><a href="?page={{ posts.next_page_number }}">&raquo;</a></li>
+        {% else %}
+          <li class="disabled"><a href="#">&raquo;</a></li>
+        {% endif %}
+      </ul>
+    </center>
+  </div>
+<div class="col-md-3 sidebar">
+    {% load blog_tags %}
+    {% blog_recent %}
+    {% blog_categories %}
+    {% blog_archive %}
+    <br/>
+  </div>
+</div>
+{% endblock %}

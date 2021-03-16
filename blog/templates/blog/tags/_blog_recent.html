@@ -1,0 +1,7 @@
+<h2>Recent Posts</h2>
+{% for recent_post in recent %}
+<div style="margin-bottom:10px;">
+    <a href="{% url 'blog:blog_post' recent_post.created.year recent_post.created.month recent_post.slug %}">
+        {{ recent_post.title }}</a>
+</div>
+{% endfor %}

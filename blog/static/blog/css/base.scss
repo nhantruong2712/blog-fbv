@@ -1,0 +1,265 @@
+/** Page styles **/
+
+html,
+body {
+    font-family: $font;
+    background: $base;
+    color: $text;
+    height: 100%;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+.sidebar {
+    background-color: #eee;
+}
+
+
+/** Common Element Styles **/
+
+p {
+    font-size: 12pt;
+    margin: 15px 0 15px 0;
+}
+
+pre,
+code {
+    font-family: $font-code;
+    background-color: $dark-base;
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
+}
+
+code {
+    margin: 2px;
+    padding: 2px;
+    color: $link;
+    background-color: darken($base, 10%);
+}
+
+hr {
+    border-color: $darker-base;
+}
+
+a {
+    text-decoration: none;
+    color: $link;
+    &:hover {
+        color: $link-hover;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/** Navbar Styles **/
+
+.navbar-default {
+    font-size: 16px;
+    background-color: $dark-base;
+    border-color: $dark-base;
+    border-radius: 0;
+    .navbar-collapse,
+    .navbar-form {
+        border-color: $dark-base;
+    }
+    .navbar-brand {
+        font-size: 22px;
+        color: $base;
+        &:hover {
+            color: $base;
+        }
+    }
+    .navbar-toggle {
+        border-color: $dark-base;
+        &:hover {
+            background-color: $base;
+        }
+    }
+    .navbar-nav {
+        li {
+            .dropdown-menu {
+                border-top: none;
+                background-color: $dark-base;
+                li>a:hover {
+                    color: lighten($base, 10%);
+                }
+            }
+            a {
+                color: $base;
+            }
+            a:hover {
+                color: $base;
+            }
+        }
+        .open {
+            a,
+            a:hover,
+            a:focus,
+            a:active {
+                background-color: $dark-base;
+                color: $base;
+            }
+        }
+    }
+}
+
+
+/** Footer Styles **/
+
+.footer-primary {
+    background: $dark-base;
+    padding-bottom: 10px;
+    color: darken($base, 20%);
+}
+
+.footer-secondary {
+    color: darken($base, 20%);
+    background: $darker-base;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    img {
+        padding-left: 5px;
+    }
+}
+
+.badge {
+    background-color: $link-hover;
+    color: $base;
+}
+
+#social-links {
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+
+/** Pagination Styles **/
+
+.pagination {
+    li {
+        a {
+            border-color: $darker-base;
+            background-color: $base;
+            color: $link-hover;
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: darken($base, 10%);
+                border-color: $darker-base;
+                color: $link;
+            }
+        }
+    }
+    .active {
+        a {
+            border-color: $darker-base;
+            background-color: $link;
+            color: $base;
+            &:hover {
+                color: $base;
+                background-color: $link-hover;
+            }
+        }
+    }
+    .disabled {
+        a {
+            background-color: $base;
+            border-color: $darker-base;
+            &:hover {
+                background-color: $base;
+                border-color: $darker-base;
+            }
+        }
+    }
+}
+
+
+/** Form and Button Styles **/
+
+input.form-control {
+    background-color: $base;
+    border-color: $darker-base;
+    color: $text;
+}
+
+.btn-default {
+    background-color: $base;
+    border-color: $darker-base;
+    color: $text;
+    &:hover,
+    &:active,
+    &:focus,
+    &.active:hover {
+        background-color: darken($base, 5%);
+        border-color: darken($darker-base, 5%);
+        color: $text;
+    }
+    &.active {
+        background-color: $darker-base;
+        border-color: $darker-base;
+        color: $base;
+    }
+}
+
+
+/** Fish graph styles **/
+
+.chart-caption {
+    margin-bottom: 50px;
+}
+
+.background {
+    fill: $chart-fill !important;
+}
+
+text {
+    font-family: $font !important;
+    font-size: 10pt !important;
+    color: $text !important;
+}
+
+
+/** Skills carousel styles **/
+
+.slick-slide:focus {
+    outline: none;
+}
+
+#skills {
+    font-size: 6em;
+}
+
+.skills-container {
+    background-color: $dark-base;
+}
+
+.skills-container>.container {
+    padding: 10px 40px 10px 40px;
+}
+
+.prettyprint {
+    font-family: $font-code;
+}
+
+.post {
+    padding-bottom: 20px;
+}
+
+.ingredient-list {
+    padding-left: 20px;
+}
+
+.step-list {
+    padding-left: 15px;
+}
+
+.step-list>li {
+    padding-bottom: 10px;
+}

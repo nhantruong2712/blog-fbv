@@ -1,0 +1,26 @@
+- SASS/SCSS
+- compress css ✓
+- Block tags django (spaceless, compress, load navigation, build_navigation) ✓
+- Model.Admin
+- RSS Feed
+- @property ✓
+- file .yml
+- sitemap
+- debug_toolbar
+- test settings.py
+- compressor ✓
+- 'django.contrib.sites',
+    'django.contrib.flatpages',
+    'django.contrib.sitemaps',
+    'django.contrib.redirects'
+- INTERNAL_IPS
+- APPEND_SLASH
+- SECRET_KEY
+- ALLOWED_HOSTS = ['*']
+- flatpage ✓
+- content__icontains
+- django-libsass ✓
+- strip tag ✓
+- TabularInline
+_ _set (reverse related object lookup.)
+✓✓✓✓

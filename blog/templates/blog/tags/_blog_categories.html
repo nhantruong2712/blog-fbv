@@ -1,0 +1,4 @@
+<h2>Categories</h2>
+{% for cates in categories %}
+    <a href="{% url 'blog:blog_category' cates|slugify %}">{{ cates.title }}</a>{% if not forloop.last %}, {% endif %}
+{% endfor %}
