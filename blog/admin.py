@@ -29,3 +29,4 @@ class PostAdmin(admin.ModelAdmin):
 	def make_invisible(self, request, queryset):
 		queryset.update(visible=False)
 	make_invisible.short_description = 'Make selected posts invisible'
+

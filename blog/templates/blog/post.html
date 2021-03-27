@@ -4,15 +4,27 @@
 {% block title %}{{ post.title}}{% endblock %}
 
 {% block content %}
-
-<h2>{{ post.title }}</h2>
-{% for cates in categories %}
-<p>{{ post.created | date }} in
-    <a href="{% url 'blog:blog_category' cates|slugify %}">{{ cates.title }}</a>
-</p>
-{% endfor %}
-</hr>
-<p>{{ post.content | safe }}</p>
-<br/>
+<div class="row">
+  <div class="col-md-9">
+      <div class="post">
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.created | date }} in
+              <a href="{% url 'blog:blog_category' post.category|slugify %}">{{ post.category.title }}</a>
+          </p>
+          <hr>
+          <p>{{ post.content | safe }}</p>
+          <br/>
+          <p style="float: right">{{ post.click }} Views</p>
+      </div>
+  </div>
+    <div class="col-md-3 sidebar">
+    {% load blog_tags %}
+    {% blog_recent %}
+    {% blog_categories %}
+    {% blog_archive %}
+    <br/>
+    </div>
+    </div>
+</div>
 
 {% endblock %}

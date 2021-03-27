@@ -1,0 +1,10 @@
+{%  extends "../blog/base.html" %}
+{% autoescape off %}
+{% block content %}
+<h3>Hi {{ user.username }},</h3>
+
+<p>Please click the following link to confirm your registration:
+
+http://{{ domain }}{% url 'user:activate' uidb64=uid token=token %}</p>
+{% endblock %}
+{% endautoescape %}

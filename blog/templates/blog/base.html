@@ -13,14 +13,20 @@
     <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"/>
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"/>
-    <link rel="stylesheet" type="text/x-scss" href="{% static './blog/css/base.scss' %}"/>
+    <link rel="stylesheet" type="text/x-scss" href="https://res.cloudinary.com/nhandz/raw/upload/v1616660370/Blog/blog/css/base.scss"/>
     {% block extra-head %} {% endblock %}
     {% compress css %}
     <link rel="stylesheet" type="text/x-scss" href="{% static './blog/css/site.scss' %}"/>
     {% endcompress %}
 </head>
 <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="height: 60px;">
+        <div class="welcome">
+            {% if request.user.is_staff %}
+                <span style="color: #fff; padding-right: 15px;">Hi {{ request.user.username }}</span>
+                <a href="{% url 'user:logout' %}" style="color: #a1ccf1;">Logout</a>
+            {% endif %}
+        </div>
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -30,13 +36,16 @@
             <span class="icon-bar"></span>
           </button>
           {% load static %}
-          <a class="navbar-brand" href="/"><span id="brand-name">Nhandz</span></a>
+          <a class="navbar-brand" href="/"><span id="brand-name">
+              <img src="https://i.ibb.co/YBTpNDH/Logo-nhandz-white.png" alt="" style="width: 90px; height: 50px;">
+          </span></a>
         </div>
 
-        <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1" style="padding-top: 5px;">
             {% load navigation %}
             {% build_navigation %}
           <form class="navbar-form navbar-right" action="{% url 'blog:blog_search' %}">
+              {% csrf_token %}
             <div class="form-group">
               <input type="text" name="search" class="form-control" x-webkit-speech="">
             </div>
@@ -44,8 +53,8 @@
           </form>
         </div>
       </div>
-    </nav>
 
+    </nav>
     <div class="container content" style="min-height:80vh;">
       {% for message in messages %}
       <div class="alert alert-dismissible alert-{{ message.tags }}">
@@ -56,7 +65,6 @@
       {% block content %}
       {% endblock %}
     </div>
-
     <footer class="footer-primary">
       <div class="skills-container">
         <div class="container">
@@ -68,6 +76,7 @@
             <span class="devicons devicons-mysql"></span>
               <span></span>
             <span class="devicons devicons-javascript"></span>
+              <span></span>
           </div>
         </div>
       </div>
@@ -80,23 +89,22 @@
             <span>&copy; 2021 Nhandz</span>
           </div>
           <div class="col-sm-6 text-right" id="social-links">
-            {% load static %}
             <a href="//www.facebook.com/nhan.is.dz" target="_blank" title="Nhandz on Facebook">
-              <img src="{% static './blog/img/icons/facebook.png/' %}">
+              <img src="https://i.ibb.co/Z2KCXbQ/facebook.png">
             </a>
             <a href="//github.com/nhantruong2712" title="Nhandz on Github">
-              <img src="{% static './blog/img/icons/github.png' %}">
+              <img src="https://i.ibb.co/02wN0X0/github.png">
             </a>
             <a href="mailto:trconghiennhan2712@gmail.com" title="Contact Me">
-              <img src="{% static './blog/img/icons/email.png' %}">
+              <img src="https://i.ibb.co/9vYX3DB/email.png">
             </a>
           </div>
         </div>
-      <div>
+      </div>
     </footer>
-    <script src="{% static './blog/js/jquery.min.js' %}"></script>
-    <script src="{% static './blog/js/bootstrap.min.js' %}"></script>
-    <script src="{% static './blog/js/pygal.min.js' %}"></script>
+    <script src="https://res.cloudinary.com/nhandz/raw/upload/v1616660820/Blog/blog/js/jquery.min.js"></script>
+    <script src="https://res.cloudinary.com/nhandz/raw/upload/v1616660820/Blog/blog/js/bootstrap.min.js"></script>
+    <script src="https://res.cloudinary.com/nhandz/raw/upload/v1616660820/Blog/blog/js/pygal.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <script src="//www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
@@ -105,7 +113,7 @@
             dots: false,
             infinite: true,
             speed: 300,
-            slidesToShow: 7,
+            slidesToShow: 8,
             slidesToScroll: 2,
             responsive: [
                 {

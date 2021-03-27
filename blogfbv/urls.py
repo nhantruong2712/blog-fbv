@@ -23,6 +23,8 @@ urlpatterns = [
     path('', blog),
     path('sitemap.xml/', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('<url>/', views.flatpage),
+    path('social-auth/', include('social_django.urls', namespace='social')),
+    path('accounts/', include('user.urls', namespace='accounts')),
 ]
 
 handler404 = 'blog.views.error'
@@ -32,3 +34,13 @@ if settings.DEBUG:
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
+
+''' path('accounts/', include('django.contrib.auth.urls')) include:
+accounts/login/ [name='login']
+accounts/logout/ [name='logout']
+accounts/password_change/ [name='password_change']
+accounts/password_change/done/ [name='password_change_done']
+accounts/password_reset/ [name='password_reset']
+accounts/password_reset/done/ [name='password_reset_done']
+accounts/reset/<uidb64>/<token>/ [name='password_reset_confirm']
+accounts/reset/done/ [name='password_reset_complete'] '''

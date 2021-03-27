@@ -4,6 +4,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class BaseMenuItem(models.Model):
 	title = models.CharField(max_length=64)
 	link = models.CharField(max_length=64)
@@ -30,8 +31,8 @@ class MenuItem(BaseMenuItem):
 
 	@property
 	def sub_menu_items(self):
+		# _set: 1-many fields or m-m fields, replace related_name, see on migrate
 		return self.submenuitems_set.all().order_by('order')
-		# submenuitems_set: 1-many fields or m-m fields, replace related_name, see on migrate
 
 	@property
 	def num_sub_menu_items(self):
@@ -40,6 +41,7 @@ class MenuItem(BaseMenuItem):
 	@property
 	def has_sub_menu_items(self):
 		return self.num_sub_menu_items > 0
+
 
 class SubMenuItems(BaseMenuItem):
 	menu = models.ForeignKey(MenuItem, on_delete=models.CASCADE)

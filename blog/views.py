@@ -1,11 +1,16 @@
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.cache import cache_page
 
 from blog.models import Post, Category
 
-
 # Create your views here.
+
+
+def error(request, *args, **kwargs):
+	return render(request, 'blog/404.html')
+
 
 def posts(request, filter_kwargs={}, search=None):
 	objects = Post.visible_posts.filter(**filter_kwargs)
@@ -36,9 +41,12 @@ def category(request, slug):
 	return posts(request, {'category': categories})
 
 
+@login_required(login_url='/accounts/login')
 @cache_page(60*15)
 def blog_post(request, year, month, slug): # year, month, slug in <int:year>/<int:month>/<slug:slug>
 	post = get_object_or_404(Post, slug=slug)
+	post.click = post.click + 1
+	post.save()
 	return render(request, 'blog/post.html', {'post': post})
 
 
@@ -48,5 +56,3 @@ def search(request):
 		return posts(request, {'content__icontains': query}, search=query)  # icontain: Case-insensitive containment test.
 	return posts(request, search=query)
 
-def error(request, *args, **kwargs):
-	return render(request, 'blog/404.html')

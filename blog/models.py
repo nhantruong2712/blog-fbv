@@ -6,6 +6,7 @@ from django.db import models
 # Create your models here.
 from django.template.defaultfilters import slugify
 from django.utils.html import strip_tags
+from django.contrib.contenttypes.fields import GenericRelation
 
 from blog.managers import VisiblePostManager, PostManager
 
@@ -34,6 +35,7 @@ class Post(models.Model):
 	content = RichTextField(blank=True, null=True)
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
+	click = models.PositiveIntegerField(default=0)
 
 	objects = PostManager()
 	visible_posts = VisiblePostManager()

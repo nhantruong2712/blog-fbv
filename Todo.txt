@@ -1,4 +1,7 @@
 - Like, share, comment
-- Number of views
+- Number of views ✓
 - Api upload vid thr ytb
--
+- previous post, next post
+- 2 languages
+- face register
+- Add Ads on blog

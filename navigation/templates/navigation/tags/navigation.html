@@ -1,4 +1,9 @@
 <ul ul class="nav navbar-nav navbar-right">
+    {{user}}
+    {% if request.user.is_staff %}
+        <span>Hi {{ request.user.username }}</span>
+        <a href="{% url 'user:logout' %}">Logout</a>
+    {% endif %}
     {% for item in menu_items %}
         {% if item.has_sub_menu_items %}
             <li class="dropdown">
@@ -16,6 +21,7 @@
         {% else %}
             <li>
                 <a href="{{ item.url }}" {% if sub_item.new_tab %}target="_blank"{% endif %}>{{item.title}}</a>
+
             </li>
         {% endif %}
     {% endfor %}
