@@ -63,7 +63,6 @@ SpeechRecognition==3.8.1
 sqlparse
 tqdm
 urllib3
-vboxapi==1.0
 vine==5.0.0
 wcwidth==0.2.5
 webdriver-manager==3.2.2
