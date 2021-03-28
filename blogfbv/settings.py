@@ -134,7 +134,7 @@ APPEND_SLASH = True
 
 SECRET_KEY = 'u6a9mtx2%(e8xxra%(_)yj#z@*6&m)!!=+&5pw9*n8!nsffjdi'
 
-ALLOWED_HOSTS = ['*', 'nhandz.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.open_id.OpenIdAuth',
@@ -178,6 +178,7 @@ SOCIAL_AUTH_GITHUB_SECRET = 'e3f19a2bf035cdb9203af60d521d8d6469f266d8'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
