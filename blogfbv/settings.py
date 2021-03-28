@@ -130,7 +130,7 @@ APPEND_SLASH = True
 
 SECRET_KEY = 'u6a9mtx2%(e8xxra%(_)yj#z@*6&m)!!=+&5pw9*n8!nsffjdi'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.nhandzok.herokuapp.com' 'nhandzok.herokuapp.com']
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.open_id.OpenIdAuth',
@@ -149,7 +149,7 @@ DATABASES = {
     }
 }
 
-DEBUG = True
+DEBUG = False
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -179,3 +179,13 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+SECURE_HSTS_SECONDS = 31536000  # a year (3153600secs)
+
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')  # these here for deployment
+PREPEND_WWW = True
+BASE_URL = "https://www.nhandzok.herokuapp.com"
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
