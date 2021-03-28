@@ -25,6 +25,7 @@ urlpatterns = [
     path('<url>/', views.flatpage),
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('accounts/', include('user.urls', namespace='accounts')),
+    path('todoapp/', include('todoapp.urls', namespace='todoapp')),
 ]
 
 handler404 = 'blog.views.error'

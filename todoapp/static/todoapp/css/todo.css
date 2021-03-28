@@ -1,0 +1,57 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+.center{
+  display:flex;
+  justify-content: center;
+  text-align:center;
+  align-items: center;
+}
+.container{
+  color:rgb(4, 114, 114);
+  font-style:bold;
+  height:100vh;
+
+}
+#a{
+  position:relative;
+  width:600px;
+}
+form.add-form{
+  width:600px;
+}
+input#b{
+  background-color: rgba(255, 255, 255, 0.24);
+}
+input.add{
+  background-color: rgba(255, 255, 255, 0.24);
+}
+input.add:focus{
+  background-color: rgba(255, 255, 255, 0.24);
+}
+
+#search-icon{
+  position:absolute;
+  top :0;
+  right:0;
+  transform:translateY(60%);
+  margin-right:20px;
+  color:rgb(4, 114, 114);
+}
+li.list-group-item{
+  padding:20px;
+  font-size:1.2rem;
+  background-color: rgba(255, 255, 255, 0.24);
+  display:flex;
+  justify-content:space-between;
+  width:600px;
+}
+span.delete-btn{
+  cursor:pointer;
+}
+span.delete-btn:hover{
+  color:rgb(16, 201, 201);
+}

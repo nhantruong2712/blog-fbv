@@ -1,3 +1,8 @@
+try:
+    from blogfbv.local_settings import *
+except ImportError:
+    # No local settings was found, skipping.
+    pass
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -23,9 +28,12 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'social_django',
 
+
     'blog',
     'navigation',
     'user',
+    'todoapp',
+    'shortenurl',
 ]
 
 MIDDLEWARE = [
@@ -120,17 +128,15 @@ LIBSASS_SOURCE_COMMENTS = False
 
 APPEND_SLASH = True
 
-SECRET_KEY = 'secret_key_lololol'
+SECRET_KEY = 'u6a9mtx2%(e8xxra%(_)yj#z@*6&m)!!=+&5pw9*n8!nsffjdi'
 
 ALLOWED_HOSTS = ['*']
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.open_id.OpenIdAuth',
-    # 'social_core.backends.google.GoogleOpenId',
-    # 'social_core.backends.google.GoogleOAuth2',
-    # 'social_core.backends.google.GoogleOAuth',
-    # 'social_core.backends.twitter.TwitterOAuth',
-    # 'social_core.backends.yahoo.YahooOpenId',
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.google.GoogleOAuth',
     'django.contrib.auth.backends.ModelBackend',
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.github.GithubOAuth2',
@@ -154,11 +160,11 @@ EMAIL_HOST_PASSWORD = 'Multiplyzz1..'
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-SOCIAL_AUTH_FACEBOOK_KEY = '433307314324402'
-SOCIAL_AUTH_FACEBOOK_SECRET = '6f23e52e176c543f3b822ca1e84c2db6'
+SOCIAL_AUTH_FACEBOOK_KEY = '895554057892721'
+SOCIAL_AUTH_FACEBOOK_SECRET = '9469f198d933a5e247cf270cb4d051c4'
 
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '415159135672-jjes9ut2ugtpa02j362pi0nlk6t15h0g.apps.googleusercontent.com'
-# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'yYtQUTtjuj96DhhcjxoVA3-o'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '415159135672-jjes9ut2ugtpa02j362pi0nlk6t15h0g.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'yYtQUTtjuj96DhhcjxoVA3-o'
 
 SOCIAL_AUTH_GITHUB_KEY = 'Iv1.02c549f0ede2329d'
 SOCIAL_AUTH_GITHUB_SECRET = 'e3f19a2bf035cdb9203af60d521d8d6469f266d8'

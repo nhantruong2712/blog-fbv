@@ -22,8 +22,8 @@
 <body>
     <nav class="navbar navbar-default" style="height: 60px;">
         <div class="welcome">
-            {% if request.user.is_staff %}
-                <span style="color: #fff; padding-right: 15px;">Hi {{ request.user.username }}</span>
+            {% if user.is_active %}
+                <span style="color: #fff; padding-right: 15px;">Hi {{ user.username }}</span>
                 <a href="{% url 'user:logout' %}" style="color: #a1ccf1;">Logout</a>
             {% endif %}
         </div>

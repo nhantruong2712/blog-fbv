@@ -31,7 +31,6 @@
             <a href="?page={{ i }}{% if search %}&search={{ search }}{% endif %}">{{ i }}</a>
           </li>
         {% endfor %}
-
         {% if posts.has_next %}
           <li><a href="?page={{ posts.next_page_number }}">&raquo;</a></li>
         {% else %}

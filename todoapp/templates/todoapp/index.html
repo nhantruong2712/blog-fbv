@@ -1,0 +1,55 @@
+{% extends "../blog/base.html" %}
+{% load static %}
+{% block title %}ToDo App{% endblock %}
+{% block extra-head %}
+<link rel="stylesheet" type="text/css" href="https://res.cloudinary.com/nhandz/raw/upload/v1616662294/Blog/user/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://res.cloudinary.com/nhandz/raw/upload/v1616662304/Blog/user/fonts/iconic/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="{% static './todoapp/css/styles.css' %}" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://res.cloudinary.com/nhandz/raw/upload/v1616662294/Blog/user/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://res.cloudinary.com/nhandz/raw/upload/v1616662304/Blog/user/fonts/iconic/css/material-design-iconic-font.min.css">
+{% endblock %}
+{% block content %}
+<div class="row" id="form-todo">
+    <div class="col-lg-4 col-lg-offset-4" id="content">
+        <h2>TODO APP</h2>
+        <form action="{% url 'todoapp:add' %}" method="POST" role="form">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="input-group">
+                  {{ forms.title }}
+                  <span class="input-group-btn">
+                      <button type="submit" class="btn-group" id="add-btn">ADD</button>
+                  </span>
+                </div>
+            </div>
+        </form>
+
+        <div class="row t10">
+            <div class="col-lg-12">
+                <div class="btn-toolbar">
+                    <div class="btn-group">
+                        <a href="{% url 'todoapp:delete_complete' %}"><button type="button" class="btn-group">
+                            <i class="glyphicon glyphicon-trash"></i> DELETE COMPLETED
+                        </button></a>
+                    </div>
+                    <div class="btn-group">
+                        <a href="{% url 'todoapp:delete_all' %}"><button type="button" class="btn-group">
+                            <i class="glyphicon glyphicon-trash"></i> DELETE ALL
+                        </button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="list-group t20">
+            {% for todo in todo_list %}
+                {% if todo.complete %}
+                <li class="list-group-item todo-completed">{{ todo.title }}</li>
+                {% else %}
+                <a href="{% url 'todoapp:complete' todo.id %}"><li class="list-group-item">{{ todo.title }}</li></a>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
