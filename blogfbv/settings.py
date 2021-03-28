@@ -4,6 +4,9 @@ except ImportError:
     # No local settings was found, skipping.
     pass
 import os
+import django_heroku
+import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -49,6 +52,7 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'blogfbv.urls'
@@ -130,7 +134,7 @@ APPEND_SLASH = True
 
 SECRET_KEY = 'u6a9mtx2%(e8xxra%(_)yj#z@*6&m)!!=+&5pw9*n8!nsffjdi'
 
-ALLOWED_HOSTS = ['www.nhandzok.herokuapp.com' 'nhandzok.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.open_id.OpenIdAuth',
@@ -148,6 +152,8 @@ DATABASES = {
         'NAME': 'mydatabase',
     }
 }
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEBUG = False
 
@@ -180,7 +186,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 SECURE_HSTS_SECONDS = 31536000  # a year (3153600secs)
-
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
@@ -189,3 +194,5 @@ PREPEND_WWW = True
 BASE_URL = "https://www.nhandzok.herokuapp.com"
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
+
+django_heroku.settings(locals())

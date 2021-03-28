@@ -17,6 +17,7 @@ configparser==5.0.1
 crayons==0.4.0
 cryptography==3.4.7
 defusedxml==0.7.1
+dj-database-url==0.5.0
 Django==3.1.2
 django-appconf==1.0.4
 django-celery-inspect==0.2.1
@@ -24,11 +25,13 @@ django-ckeditor==6.0.0
 django-compressor==2.4
 django-debug-toolbar==3.1.1
 django-etc==1.3.0
+django-heroku==0.3.1
 django-http-monitor==0.5.5
 django-js-asset==1.2.2
 django-libsass==0.8
 djangorestframework==3.12.2
 gTTS==2.2.1
+gunicorn==20.1.0
 idna==2.8
 kombu==5.0.2
 libsass==0.20.1
@@ -38,12 +41,14 @@ nose==1.3.7
 oauthlib==3.1.0
 playsound==1.2.2
 prompt-toolkit==3.0.8
+psycopg2==2.8.6
 pycosat==0.6.3
 pycparser==2.20
 pygal==2.4.0
 PyJWT==2.0.1
 pyOpenSSL==19.1.0
 PySocks==1.7.1
+python-decouple==3.4
 python3-openid==3.2.0
 pytz==2021.1
 pywin32==227
@@ -66,6 +71,7 @@ vboxapi==1.0
 vine==5.0.0
 wcwidth==0.2.5
 webdriver-manager==3.2.2
+whitenoise==5.2.0
 wikipedia==1.4.0
 win-inet-pton==1.1.0
 wincertstore==0.2
