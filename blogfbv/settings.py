@@ -134,7 +134,7 @@ APPEND_SLASH = True
 
 SECRET_KEY = 'u6a9mtx2%(e8xxra%(_)yj#z@*6&m)!!=+&5pw9*n8!nsffjdi'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['nhandzok.herokuapp.com', 'www.nhandzok.herokuapp.com']
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.open_id.OpenIdAuth',
@@ -155,7 +155,7 @@ DATABASES = {
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-DEBUG = False
+DEBUG = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
