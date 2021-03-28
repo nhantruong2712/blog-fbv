@@ -7,6 +7,20 @@ import os
 import django_heroku
 import dj_database_url
 from decouple import config
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn=os.environ['SENTRY_DSN'],
+    integrations=[DjangoIntegration()]
+)
+from sentry_sdk import capture_exception
+
+try:
+    a_potentially_failing_function()
+except Exception as e:
+    # Alternatively the argument can be omitted
+    capture_exception(e)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -155,7 +169,7 @@ DATABASES = {
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-DEBUG = True
+DEBUG = False
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
