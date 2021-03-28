@@ -185,13 +185,12 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+# these here for deployment
 SECURE_HSTS_SECONDS = 31536000  # a year (3153600secs)
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')  # these here for deployment
-PREPEND_WWW = True
-BASE_URL = "https://www.nhandzok.herokuapp.com"
+BASE_URL = "nhandzok.herokuapp.com"
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
