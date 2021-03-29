@@ -27,8 +27,8 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-	title = models.CharField(max_length=64, default='')
-	slug = models.SlugField(default='', unique=True)
+	title = models.CharField(max_length=100, default='')
+	slug = models.SlugField(default='', unique=True, max_length=100)
 	visible = models.BooleanField(default=True)
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
