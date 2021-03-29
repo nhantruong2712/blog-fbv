@@ -20,7 +20,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-20 p-b-20">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post">
 					{% csrf_token %}
 					<span class="login100-form-title p-b-10">
 						Register
@@ -65,9 +65,9 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<a href="{% url 'user:register' %}"><button class="login100-form-btn">
 								Register
-							</button>
+							</button></a>
 						</div>
 					</div>
 
@@ -81,24 +81,24 @@
 
 
 					</div>
+					{% if regisForm.errors %}
+						<div class="alert alert-error">
+						  <ul>
+							{% for field in regisForm %}
+							  {% if field.errors %}
+								{% for error in field.errors %}
+								  <li style="color: red;">{{ error|escape }}</li>
+								{% endfor %}
+							  {% endif %}
+							{% endfor %}
+						  </ul>
+						  {% if regisForm.non_field_errors %}
+							{{ regisForm.non_field_errors }}
+						  {% endif %}
+						</div>
+					{% endif %}
 				</form>
 			</div>
-			{% if regisForm.errors %}
-				<div class="alert alert-error">
-			  		<ul>
-						{% for field in regisForm %}
-				  			{% if field.errors %}
-								{% for error in field.errors %}
-					  				<li style="color: red;">{{ error|escape }}</li>
-								{% endfor %}
-				  			{% endif %}
-						{% endfor %}
-					</ul>
-					{% if regisForm.non_field_errors %}
-						{{ regisForm.non_field_errors }}
-			  		{% endif %}
-				</div>
-			{% endif %}
 		</div>
 	</div>
 

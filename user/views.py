@@ -5,40 +5,44 @@ from django.shortcuts import render, redirect
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_text
 from django.contrib.auth.models import User
+from django.utils.html import strip_tags
 from django.utils.http import urlsafe_base64_decode
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 from django.template.loader import render_to_string
 from django.contrib.auth.decorators import login_required
+from django.core import mail
 
 from user.forms import Register
 from user.tokens import account_activation_token
 # Create your views here
 
 def register(request):
-	regisForm = Register(request.POST or None)
+	regisForm = Register(request.POST)
 	if regisForm.is_valid():
 		user = regisForm.save()
-		user.refresh_from_database()
-		user.profile.first_name = regisForm.cleaned_data.get('first_name')  # cleaned_data is holding
-		user.profile.last_name = regisForm.cleaned_data.get('last_name')  # the validated form data
+		user.refresh_from_db()
+		# user.profile.first_name = regisForm.cleaned_data.get('first_name')  # cleaned_data is holding
+		# user.profile.last_name = regisForm.cleaned_data.get('last_name')  # the validated form data
 		user.profile.email = regisForm.cleaned_data.get('email')
 		user.is_active = False  # user can't login until confirm link
 		user.save()
 		current_site = get_current_site(request)
 		subject = "Please Active Your Account"
 
-		message = render_to_string('user/active_request.html', {
+		message = render_to_string('user/activate_request.html', {
 			'user': user,
 			'domain': current_site.domain,
 			'uid': urlsafe_base64_encode(force_bytes(user.pk)),
 			# method will generate a hash value with user related data
 			'token': account_activation_token.make_token(user),
 		})
-		user.email_user(subject, message)
+		plain_message = strip_tags(message)
+		# user.email_user(subject, plain_message)
+		mail.send_mail(subject, plain_message, 'From Nhandzblog <nhandzblog@gmail.com>', [user.profile.email], html_message=message)
 		# login(request, user)  # use when don't need to email confirm
 		# login() method takes an HttpRequest object and a User object and saves the user’s ID in the session
-		return redirect('/activationSent')
+		return redirect('/accounts/activationSent')
 	# else:
 	# 	regisForm = Register()    # cannot show the error message if use else
 	context = {'regisForm': regisForm}
@@ -47,7 +51,7 @@ def register(request):
 
 def logincase(request):
 	if request.user.is_authenticated:
-		return redirect('/blog')
+		return redirect('/')
 	else:
 		if request.method == 'POST':
 			username = request.POST.get('username')
@@ -59,9 +63,9 @@ def logincase(request):
 				if 'next' in request.POST:
 					return redirect(request.POST.get('next'))
 				else:
-					return redirect('/blog')
+					return redirect('/')
 			else:
-				messages.info(request, "Your username OR password is incorrect. Did you active your account?")
+				messages.info(request, "Your username OR password is incorrect. Did you active your account or created one?")
 	context = {}
 	return render(request, 'user/login.html', context)
 
@@ -84,7 +88,7 @@ def activate(request, uidb64, token):
 		user.profile.signup_confirmation = True
 		user.save()
 		login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-		return redirect('/login')
+		return redirect('/accounts/login')
 	else:
 		return render(request, 'user/activation_invalid.html')
 
