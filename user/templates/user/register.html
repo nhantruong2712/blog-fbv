@@ -82,7 +82,6 @@
 
 					</div>
 					{% if regisForm.errors %}
-						<div class="alert alert-error">
 						  <ul>
 							{% for field in regisForm %}
 							  {% if field.errors %}
@@ -95,7 +94,6 @@
 						  {% if regisForm.non_field_errors %}
 							{{ regisForm.non_field_errors }}
 						  {% endif %}
-						</div>
 					{% endif %}
 				</form>
 			</div>

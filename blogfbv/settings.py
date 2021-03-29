@@ -166,6 +166,7 @@ SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '867006737479712'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'dedb3bf86f47c1c7fc77da805521c690'
+
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link']
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
   'fields': 'id, name, email, picture.type(large), link'
@@ -176,6 +177,7 @@ SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [
     ('picture', 'picture'),
     ('link', 'profile_url'),
 ]
+
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '415159135672-jjes9ut2ugtpa02j362pi0nlk6t15h0g.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'yYtQUTtjuj96DhhcjxoVA3-o'
@@ -195,16 +197,16 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # these here for deployment
-# SECURE_HSTS_SECONDS = 31536000  # a year (3153600secs)
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
-SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-SECURE_HSTS_PRELOAD = False
-# BASE_URL = "nhandzok.herokuapp.com"
-# ALLOWED_HOSTS = ['nhandzok.herokuapp.com', 'www.nhandzok.herokuapp.com']
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+SECURE_HSTS_SECONDS = 31536000  # a year (3153600secs)
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+BASE_URL = "nhandzok.herokuapp.com"
+ALLOWED_HOSTS = ['nhandzok.herokuapp.com', 'www.nhandzok.herokuapp.com']
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
