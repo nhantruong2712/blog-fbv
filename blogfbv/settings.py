@@ -153,8 +153,6 @@ DATABASES = {
     }
 }
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 DEBUG = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -194,5 +192,7 @@ CSRF_COOKIE_SECURE = True
 BASE_URL = "nhandzok.herokuapp.com"
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
