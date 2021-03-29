@@ -1,4 +1,4 @@
-# nhandz.herokuapp.com
+# nhandzok.herokuapp.com
 
 This is the repo for my projects blog (not including another projects). Feel free to use it for your own site, play around with it etc.
 
@@ -19,7 +19,7 @@ Clone the repo and install the requirements
 Then, copy the settings.py into settings.py and change them as desired.
 `$ cp blog/settings.py brobin/settings.py`
 
-Update the database, creat a user, and you're good to go!
+Update the database, create a user, and you're good to go!
 
 ```
 $ python manage.py makemigrations
