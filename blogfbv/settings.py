@@ -167,11 +167,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # these here for deployment
 SECURE_HSTS_SECONDS = 31536000  # a year (3153600secs)
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
-SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-SECURE_HSTS_PRELOAD = False
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
 BASE_URL = "nhandzok.herokuapp.com"
 ALLOWED_HOSTS = ['nhandzok.herokuapp.com', 'www.nhandzok.herokuapp.com']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
