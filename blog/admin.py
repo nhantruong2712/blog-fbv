@@ -17,6 +17,7 @@ class PostAdmin(admin.ModelAdmin):
 	list_display = ['title', 'visible', 'get_date', 'author', 'short_preview']
 	list_display_links = ['title']
 	list_filter = ['visible', 'category']
+	prepopulated_fields = {"slug": ("title",)}
 	search_fields = ['title', 'content']
 	ordering = ['-created']
 	list_per_page = 25
