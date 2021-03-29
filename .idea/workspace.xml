@@ -72,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blogfbv/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1305">
-              <caret line="146" column="1" lean-forward="true" selection-start-line="146" selection-start-column="1" selection-end-line="146" selection-end-column="1" />
+            <state relative-caret-position="-1054">
+              <caret line="146" column="1" selection-start-line="146" selection-start-column="1" selection-end-line="146" selection-end-column="1" />
               <folding>
                 <element signature="e#120#129#0" expanded="true" />
               </folding>
@@ -232,71 +232,6 @@
               <item name="BlogFBV" type="462c0819:PsiDirectoryNode" />
               <item name="blogfbv" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BlogFBV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlogFBV" type="462c0819:PsiDirectoryNode" />
-              <item name="todoapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlogFBV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlogFBV" type="462c0819:PsiDirectoryNode" />
-              <item name="todoapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlogFBV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlogFBV" type="462c0819:PsiDirectoryNode" />
-              <item name="todoapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="todoapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlogFBV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlogFBV" type="462c0819:PsiDirectoryNode" />
-              <item name="todoapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="todoapp" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlogFBV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlogFBV" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlogFBV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlogFBV" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlogFBV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlogFBV" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlogFBV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlogFBV" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlogFBV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlogFBV" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlogFBV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlogFBV" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -357,10 +292,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49892008" visible="true" weight="0.1321004" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49892008" visible="true" weight="0.1321004" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5010799" side_tool="true" weight="0.14266843" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -372,7 +306,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299566" />
       <window_info anchor="bottom" id="Pylint" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.33863965" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.33863965" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -766,8 +700,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blogfbv/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="146" column="1" lean-forward="true" selection-start-line="146" selection-start-column="1" selection-end-line="146" selection-end-column="1" />
+        <state relative-caret-position="-1054">
+          <caret line="146" column="1" selection-start-line="146" selection-start-column="1" selection-end-line="146" selection-end-column="1" />
           <folding>
             <element signature="e#120#129#0" expanded="true" />
           </folding>

@@ -173,16 +173,16 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'yYtQUTtjuj96DhhcjxoVA3-o'
 SOCIAL_AUTH_GITHUB_KEY = 'Iv1.02c549f0ede2329d'
 SOCIAL_AUTH_GITHUB_SECRET = 'e3f19a2bf035cdb9203af60d521d8d6469f266d8'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # these here for deployment
 SECURE_HSTS_SECONDS = 31536000  # a year (3153600secs)
