@@ -24,6 +24,7 @@
             {% if user.is_active %}
                 <span style="color: #fff; padding-right: 15px;">Hi {{ user.username }}</span>
                 <a href="{% url 'user:logout' %}" style="color: #a1ccf1;">Logout</a>
+            {% endif %}
         </div>
       <div class="container">
         <div class="navbar-header">
