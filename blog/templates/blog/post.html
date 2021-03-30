@@ -8,7 +8,7 @@
   <div class="col-md-9">
       <div class="post">
           <h2>{{ post.title }}</h2>
-          <p>{{ post.created | date }} in
+          <p>{{ post.created | date }} <b>|</b> <span>{{ post.author }}</span> in
               <a href="{% url 'blog:blog_category' post.category|slugify %}">{{ post.category.title }}</a>
           </p>
           <hr>
