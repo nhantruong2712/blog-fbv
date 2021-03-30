@@ -86,9 +86,9 @@
 						<div id="errors">
 							<div class="inner">
 								<ul>
+									<p>WARNING:</p>
 									{% for fields in regisForm %}
 										{% if fields.errors %}
-											<p>WARNING:</p>
 											<li>
 												<ul style="color: red">{{ fields.label }}: {{ fields.errors|striptags }}</ul>
 											</li>
