@@ -5,5 +5,6 @@
 - 2 languages
 - face register
 - Add Ads on blog
-- Code Todoapp
+- Code Todoapp ✓
 - Social login
+- Error register form

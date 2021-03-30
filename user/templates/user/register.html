@@ -3,7 +3,7 @@
 {% load compress %}
 {% block title %} Register {% endblock %}
 {% block extra-head %}
-<link rel="stylesheet" type="text/css" href="https://res.cloudinary.com/nhandz/raw/upload/v1616662294/Blog/user/fonts/font-awesome-4.7.0/css/font-awesome.min.css}">
+<link rel="stylesheet" type="text/css" href="https://res.cloudinary.com/nhandz/raw/upload/v1616662294/Blog/user/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="https://res.cloudinary.com/nhandz/raw/upload/v1616662304/Blog/user/fonts/iconic/css/material-design-iconic-font.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -82,18 +82,22 @@
 
 					</div>
 					{% if regisForm.errors %}
-						  <ul>
-							{% for field in regisForm %}
-							  {% if field.errors %}
-								{% for error in field.errors %}
-								  <li style="color: red;">{{ error|escape }}</li>
-								{% endfor %}
-							  {% endif %}
-							{% endfor %}
-						  </ul>
-						  {% if regisForm.non_field_errors %}
-							{{ regisForm.non_field_errors }}
-						  {% endif %}
+						<!-- Error messaging -->
+						<div id="errors">
+							<div class="inner">
+								<ul>
+									{% for fields in regisForm %}
+										{% if fields.errors %}
+											<p>WARNING:</p>
+											<li>
+												<ul style="color: red">{{ fields.label }}: {{ fields.errors|striptags }}</ul>
+											</li>
+										{% endif %}
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+						<!-- /Error messaging -->
 					{% endif %}
 				</form>
 			</div>
