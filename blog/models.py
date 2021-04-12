@@ -1,4 +1,5 @@
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
 from django.contrib.sitemaps import ping_google
 from django.db import models
@@ -32,7 +33,7 @@ class Post(models.Model):
 	visible = models.BooleanField(default=True)
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
-	content = RichTextField(blank=True, null=True)
+	content = RichTextUploadingField(blank=True, null=True)
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	click = models.PositiveIntegerField(default=0)

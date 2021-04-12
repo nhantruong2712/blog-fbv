@@ -26,6 +26,7 @@ urlpatterns = [
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('accounts/', include('user.urls', namespace='accounts')),
     path('todoapp/', include('todoapp.urls', namespace='todoapp')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 handler404 = 'blog.views.error'
