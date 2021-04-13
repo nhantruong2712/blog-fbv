@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth import views as auth_views
 
 from user import views
 
@@ -12,7 +13,6 @@ urlpatterns = [
 	path('login/', views.logincase, name="login"),
 	path('activate/<uidb64>/<token>/', views.activate, name='activate'),
 	path('logout/', views.logoutuser, name='logout'),
-
 ]
 
 

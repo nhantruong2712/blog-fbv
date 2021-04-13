@@ -27,6 +27,7 @@ urlpatterns = [
     path('accounts/', include('user.urls', namespace='accounts')),
     path('todoapp/', include('todoapp.urls', namespace='todoapp')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('auth/', include('django.contrib.auth.urls')),
 ]
 
 handler404 = 'blog.views.error'
