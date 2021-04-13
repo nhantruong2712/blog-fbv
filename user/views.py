@@ -65,7 +65,7 @@ def logincase(request):
 				else:
 					return redirect('/')
 			else:
-				messages.info(request, "Username or password is incorrect. Did you active or create account?")
+				messages.info(request, "Invalid username or password. Did you active or create account?")
 	context = {}
 	return render(request, 'user/login.html', context)
 
