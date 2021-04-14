@@ -214,6 +214,8 @@ DATABASES = {
     }
 }
 
+
+
 DEBUG = True
 
 SECRET_KEY = 'u6a9mtx2%(e8xxra%(_)yj#z@*6&m)!!=+&5pw9*n8!nsffjdi'
