@@ -22,6 +22,7 @@ Then, copy the settings.py into settings.py and change them as desired.
 Update the database, create a user, and you're good to go!
 
 ```
+$ pip install -r requirements.txt
 $ python manage.py makemigrations
 $ python manage.py migrate
 $ python manage.py createsuperuser
