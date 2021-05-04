@@ -1,4 +1,5 @@
 <h2>Archive</h2>
+<!--Regroups a list of alike objects by a common attribute.-->
 {% regroup posts by created.year as archives %}
 {% for archive in archives %}
     <a href="/blog/archive/{{ archive.grouper }}">{{ archive.grouper }} <span class="badge">{{ archive.list | length }}</span></a>
