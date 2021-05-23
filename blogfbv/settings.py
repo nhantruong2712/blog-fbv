@@ -270,8 +270,8 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
-BASE_URL = "nhandzok.herokuapp.com"
-ALLOWED_HOSTS = ['nhandzok.herokuapp.com', 'www.nhandzok.herokuapp.com']
+BASE_URL = "nhandzblog.herokuapp.com"
+ALLOWED_HOSTS = ['nhandzblog.herokuapp.com', 'www.nhandzblog.herokuapp.com']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
