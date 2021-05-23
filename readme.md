@@ -1,4 +1,4 @@
-# nhandzhehe.herokuapp.com
+# nhantruongdz.herokuapp.com
 
 This is the repo for my projects blog (not including another projects). Feel free to use it for your own site, play around with it etc.
 
