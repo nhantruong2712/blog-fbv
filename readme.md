@@ -17,7 +17,7 @@ Clone the repo and install the requirements
 `$ pip install django`
 
 Then, copy the settings.py into settings.py and change them as desired.
-`$ cp blog/settings.py brobin/settings.py`
+`$ cp blog/settings.py /settings.py`
 
 Update the database, create a user, and you're good to go!
 
