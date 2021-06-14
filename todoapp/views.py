@@ -14,6 +14,7 @@ def index(request):
 	context = {'forms': forms, 'todo_list': todo_list}
 	return render(request, 'todoapp/todo.html', context)
 
+
 @require_POST
 def add(request):
 	form = TodoForm(request.POST)
