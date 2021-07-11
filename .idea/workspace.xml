@@ -128,7 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>allow</find>
       <find>store</find>
       <find>favicon.ico</find>
       <find>TEMPLATE_CONTEXT_PROCESSORS</find>
@@ -158,6 +157,7 @@
       <find>slug</find>
       <find>get_absolute_url</find>
       <find>context[</find>
+      <find>COMPRESS_PRECOMPILERS</find>
     </findStrings>
     <replaceStrings>
       <replace>Roboto</replace>
@@ -226,7 +226,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="980" />
