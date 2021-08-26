@@ -17,3 +17,4 @@ whitenoise==5.2.0
 gunicorn
 social-auth-app-django
 django-libsass
+social-auth-core==3.3.3
